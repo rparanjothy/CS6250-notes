@@ -112,6 +112,8 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - latency vs sustained thruput
 
 - Transport layer and the reln Transport and Network Layer:
-  -
+  - Provides E2E connection for machines across n/w
+  - Message from the `application layer` + Transport layer header => `Segment`
+  - O/P of transport layer is a **SEGMENT**
 
 ---
