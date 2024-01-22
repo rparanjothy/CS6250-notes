@@ -75,3 +75,38 @@
 - Focus on TCP
 - Algos for reliability, flow control and congestion control
 - latency vs sustained thruput
+
+Lesson 2 Readings and Additional Resources
+Important Readings
+CUBIC: A New TCP-Friendly High-Speed TCP Variant
+https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdfLinks to an external site.
+
+Book References
+Kurose-Ross (Edition 6): Sections 3.1.1, 3.2, 3.3, 3.4, 3.5.5, 3.6
+
+Peterson Section 6.3
+
+Optional Readings
+Congestion Avoidance and Control
+https://ee.lbl.gov/papers/congavoid.pdfLinks to an external site.
+
+A Protocol for Packet Network Intercommunication
+https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdfLinks to an external site.
+
+End-to-End Internet Packet Dynamics
+https://people.eecs.berkeley.edu/~sylvia/cs268-2019/papers//pktdynamics.pdfLinks to an external site.
+
+Data Center TCP (DCTCP)
+https://people.csail.mit.edu/alizadeh/papers/dctcp-sigcomm10.pdfLinks to an external site.
+(Links to an external site.)
+
+TIMELY: RTT-based Congestion Control for the Datacenter
+https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p537.pdfLinks to an external site.
+
+Design, implementation and evaluation of congestion control for multipath TCP
+https://www.usenix.org/legacy/events/nsdi11/tech/full_papers/Wischik.pdfLinks to an external site.
+
+Sizing Router Buffers
+https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/TR04-HPNG-060800.pdfLinks to an external site.
+
+---
