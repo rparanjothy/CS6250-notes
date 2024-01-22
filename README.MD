@@ -115,5 +115,6 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
   - Provides E2E connection for machines across n/w
   - Message from the `application layer` + Transport layer header => `Segment`
   - O/P of transport layer is a **SEGMENT**
+  - N/W layer then encapsulates its headers to the segment and then send it to receiving hosts like routes, bridges and switches
 
 ---
