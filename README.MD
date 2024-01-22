@@ -120,5 +120,7 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 
 - Multiplexing
   - Several applications to use the n/w simultaneously.
+  - `PORTS` - additional identifiers used by the `TRANSPORT` layer to find what application in the host should it route the packet!
+  - Each application will bind to a port
 
 ---
