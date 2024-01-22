@@ -121,6 +121,8 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Multiplexing
   - Several applications to use the n/w simultaneously.
   - `PORTS` - additional identifiers used by the `TRANSPORT` layer to find what application in the host should it route the packet!
-  - Each application will bind to a port
+  - Each application will bind to a port by opening `Sockets` and listening for data from remote apps.
+  - The transport layer can do multiplexing by using ports.
+  - 2 modes - Connectionless and Connection-Oriented
 
 ---
