@@ -71,11 +71,6 @@
 
 ## Lesson 2
 
-- Logical connection btwn 2 m/c in different n/w and diff location happens thru the `TRANSPORT` layer
-- Focus on TCP
-- Algos for reliability, flow control and congestion control
-- latency vs sustained thruput
-
 Lesson 2 Readings and Additional Resources
 Important Readings
 CUBIC: A New TCP-Friendly High-Speed TCP Variant
@@ -108,5 +103,12 @@ https://www.usenix.org/legacy/events/nsdi11/tech/full_papers/Wischik.pdfLinks to
 
 Sizing Router Buffers
 https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/TR04-HPNG-060800.pdfLinks to an external site.
+
+---
+
+- Logical connection btwn 2 m/c in different n/w and diff location happens thru the `TRANSPORT` layer
+- Focus on TCP
+- Algos for reliability, flow control and congestion control
+- latency vs sustained thruput
 
 ---
