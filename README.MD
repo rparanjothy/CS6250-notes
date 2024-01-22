@@ -72,3 +72,6 @@
 ## Lesson 2
 
 - Logical connection btwn 2 m/c in different n/w and diff location happens thru the `TRANSPORT` layer
+- Focus on TCP
+- Algos for reliability, flow control and congestion control
+- latency vs sustained thruput
