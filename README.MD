@@ -178,3 +178,5 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 
 - > The simplest way would be for the sender to `send a packet and wait` for its acknowledgment from the receiver. This is known as Stop and Wait ARQ. Note that the algorithm typically needs to figure out the waiting time after which it resends the packet, and this estimation can be tricky. A small timeout value can lead to unnecessary retransmissions, but a large timeout value can lead to unnecessary delays. Typically the timeout value is a function of the estimated round trip time (RTT) of the connection.
 - Send and wait has significant low perf. so introduce `windowing`; Send N packets in one shot w/o waiting for acks. Here, N is the `window size`
+  - need to id packets in the window - incrementally
+  - buffer the packets at src and client side
