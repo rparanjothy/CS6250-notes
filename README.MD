@@ -154,3 +154,5 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - higher packet loss
 - DNS is app. layer proto that used UDP
 - 64 bit header
+- Error checking
+  > No connection management overhead.
