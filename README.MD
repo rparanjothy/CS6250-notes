@@ -155,4 +155,6 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - DNS is app. layer proto that used UDP
 - 64 bit header
 - Error checking
-  > No connection management overhead.
+  > 1 bit error is detected, 2 bit will go undetected; sum is always one after one-complement
+
+### TCP 3 way h/s
