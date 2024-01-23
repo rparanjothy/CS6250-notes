@@ -134,6 +134,7 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Incoming trans. layer segment will have info on what socket it needs to be sent, which the receiving host identifies
 - > The job of delivering the data included in the transport-layer segment to the appropriate socket, as defined in the segment fields, is called demultiplexing
 - > Similarly, the sending host will need to gather data from different sockets and encapsulate each data chunk with header information (that will later be used in demultiplexing) to create segments, and then forward the segments to the network layer. We refer to this job as multiplexing.
+
 - Connectionless multiplexing/Demultiplexing
 
   - Identifier of UDP socket - Tuple of dest. IP and dest. PORT only!
@@ -142,4 +143,4 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Connection oriented multiplexing/Demultiplexing
   - TCP - 4 tuple ource IP, source port, destination IP, and destination port.
   - 3-way handshake
-  - server listenin socket
+  - Client exposes IP/port, Server establishes connection to clients IP/PORT via socket.
