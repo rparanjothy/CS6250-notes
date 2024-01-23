@@ -144,3 +144,7 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
   - TCP - 4 tuple ource IP, source port, destination IP, and destination port.
   - 3-way handshake
   - Client exposes IP/port, Server establishes connection to clients IP/PORT via socket.
+
+### More on UDP
+
+> UDP is an unreliable protocol that lacks the mechanisms that TCP has. It is a connectionless protocol that does not require the establishment of a connection (e.g., the three-way handshake) before sending packets.
