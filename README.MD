@@ -158,3 +158,6 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
   > 1 bit error is detected, 2 bit will go undetected; sum is always one after one-complement
 
 ### TCP 3 way h/s
+
+- Special `segment` w/no app data is sent with SYN bit set to 1
+- Server acks and sends a special `connection-granted` segment called `SYNACK` segment
