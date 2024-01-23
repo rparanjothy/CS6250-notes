@@ -130,6 +130,9 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 ### Connection Oriented and Connectionless Multiplexing and Demultiplexing
 
 - `Happens in the transport layer`
+- Transport layer segment
+- Incoming trans. layer segment will have info on what socket it needs to be sent, which the receiving host identifies
+- > The job of delivering the data included in the transport-layer segment to the appropriate socket, as defined in the segment fields, is called demultiplexing
 - Connectionless multiplexing/Demultiplexing
   - Identifier of UDP socket - Tuple of dest. IP and dest. PORT only!
   - Identifier of TCP socket - Tuple of 4 Source IP,port and Dest. IP,port
