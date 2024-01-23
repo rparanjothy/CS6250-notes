@@ -173,3 +173,5 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Network layer > `PACKETS`
 - Network layer is not reliable; missing packets and out of order packets
 - Reliability is an important `PRIMITIVE`; which TCP Developers decided to implement in the `TRANSPORT` layer
+- > TCP offers `IN-ORDER` delivery of the app. layer data w/o any loss or corruption
+-
