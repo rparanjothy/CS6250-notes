@@ -174,4 +174,4 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Network layer is not reliable; missing packets and out of order packets
 - Reliability is an important `PRIMITIVE`; which TCP Developers decided to implement in the `TRANSPORT` layer
 - > TCP offers `IN-ORDER` delivery of the app. layer data w/o any loss or corruption
--
+- > To have a reliable communication, the sender should be able to know which segments were received by the remote host and which were lost. Now, how can we achieve this? One way to do this is by having the receiver send acknowledgments indicating that it has successfully received the specific segment. If the sender does not receive an acknowledgment within a given period of time, the sender can assume the packet is lost and resend it. This method of using acknowledgments and timeouts is also known as **Automatic Repeat Request or ARQ**.
