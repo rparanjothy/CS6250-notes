@@ -128,3 +128,10 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 ---
 
 ### Connection Oriented and Connectionless Multiplexing and Demultiplexing
+
+- Connectionless multiplexing/Demultiplexing
+  - Identifier of UDP socket - Tuple of dest. IP and dest. PORT only!
+  - Identifier of TCP socket - Tuple of 4 Source IP,port and Dest. IP,port
+- Connection oriented multiplexing/Demultiplexing
+  - 3-way handshake
+  - server listenin socket
