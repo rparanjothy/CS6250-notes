@@ -148,3 +148,9 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 ### More on UDP
 
 > UDP is an unreliable protocol that lacks the mechanisms that TCP has. It is a connectionless protocol that does not require the establishment of a connection (e.g., the three-way handshake) before sending packets.
+
+- No congestion control or similar mechanisms
+- No connection management overhead
+- higher packet loss
+- DNS is app. layer proto that used UDP
+- 64 bit header
