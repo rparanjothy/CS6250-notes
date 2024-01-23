@@ -162,5 +162,13 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Special `segment` w/no app data is sent with SYN bit set to 1
 - Server acks and sends a special `connection-granted` segment called `SYNACK` segment
 - Client receives `SYNACK` segment, allocates resources and then sends an ack, with SYN bit set to 0
-- Connection teardown:
+- **Connection teardown:**
   - Client sends a `FIN` bit set to 1
+  - Server acks and closes the connetion
+  - Server sends a segment with FIN set to 1.. indicatin the connection is closed;
+  - client sends ACK back to server .. also waits and retires in case of segment lost.
+
+### Reliable Transmission
+
+- Network layer > `PACKETS`
+- Network layer is not reliable; missing packets and out of order packets
