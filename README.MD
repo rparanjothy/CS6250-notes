@@ -161,3 +161,4 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 
 - Special `segment` w/no app data is sent with SYN bit set to 1
 - Server acks and sends a special `connection-granted` segment called `SYNACK` segment
+- Client receives `SYNACK` segment, allocates resources and then sends an ack, with SYN bit set to 0
