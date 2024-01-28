@@ -337,4 +337,4 @@ TCP Reno:
   - MIMD is too aggressive.
 
 `RTT` - Round trip time may affect the congestion window > unfair
-N apps using `ONE` TCP connection sharing a link of rate R;
+N apps using `ONE` TCP connection sharing a link of rate R; new app having parallel TCP connections > unfair
