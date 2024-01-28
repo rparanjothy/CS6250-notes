@@ -346,3 +346,5 @@ N apps using `ONE` TCP connection sharing a link of rate R; new app having paral
 > TCP throughput is very sensitive to loss
 
 > TCP CUBIC as one such example for high bandwidth-delay product networks.
+
+> DCTCP and TIMELY are two popular examples of TCP designed for DC environments. DCTCP is based on a hybrid approach of using both implicit feedback, e.g., packet loss, and explicit feedback from the network using ECN for congestion control. TIMELY uses the gradient of RTT to adjust its window.
