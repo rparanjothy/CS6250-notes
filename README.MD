@@ -333,4 +333,5 @@ TCP Reno:
 > Increase and decrease as the utilized bandwidth sum grows
 
 - Other alternatives
-  - AIAD, MIMD, MIAD
+  - AIAD, MIAD - not aggressive reduction..
+  - MIMD is too aggressive.
