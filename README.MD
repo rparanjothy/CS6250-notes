@@ -328,3 +328,6 @@ TCP Reno:
 > The source will have a fair idea about the congestion window from the last time it had a packet loss. It will now use this information as the “target” value to avoid packet loss in the future. This target value is stored in a temporary variable, CongestionThreshold.
 
 ### TCP Fairness
+
+> AIMD leads to fairness in bandwidth sharing.
+> Increase and decrease as the utilized bandwidth sum grows
