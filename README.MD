@@ -340,3 +340,5 @@ TCP Reno:
 N apps using `ONE` TCP connection sharing a link of rate R; new app having parallel TCP connections > unfair
 
 - TCP CUBIC: Use a cubic function for the growth rate. Increase slowly over time when approaching the Window maximum `Wmax` (this is where the multiplicative decrease happened dur to n/w congestion) instead of linear.
+
+> Growth window is a fn. of tow consecutive congestion events. First congestion event, TCP undergoes a fast recovery; so all connections/flows will have the same reduced window size.. vs their individual RTT
