@@ -326,3 +326,5 @@ TCP Reno:
 > we note that there is one more scenario where slow start kicks in: when a connection dies while waiting for a timeout to occur.
 
 > The source will have a fair idea about the congestion window from the last time it had a packet loss. It will now use this information as the “target” value to avoid packet loss in the future. This target value is stored in a temporary variable, CongestionThreshold.
+
+### TCP Fairness
