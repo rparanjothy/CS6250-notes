@@ -339,4 +339,4 @@ TCP Reno:
 `RTT` - Round trip time may affect the congestion window > unfair
 N apps using `ONE` TCP connection sharing a link of rate R; new app having parallel TCP connections > unfair
 
-- TCP CUBIC: Use a cubic function for the growth rate. Increase slowly over time when approaching the Window maximum instead of linear.
+- TCP CUBIC: Use a cubic function for the growth rate. Increase slowly over time when approaching the Window maximum `Wmax` (this is where the multiplicative decrease happened dur to n/w congestion) instead of linear.
