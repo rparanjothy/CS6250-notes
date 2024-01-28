@@ -331,3 +331,6 @@ TCP Reno:
 
 > AIMD leads to fairness in bandwidth sharing.
 > Increase and decrease as the utilized bandwidth sum grows
+
+- Other alternatives
+  - AIAD, MIMD, MIAD
