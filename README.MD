@@ -63,7 +63,6 @@
 
   - If there is anyone closer than me, I am not going to route traffic
   - Iterative approach
-    ========== 11:45 PM
 
 - DNS is in the application layer
 
@@ -180,3 +179,150 @@ https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/
 - Send and wait has significant low perf. so introduce `windowing`; Send N packets in one shot w/o waiting for acks. Here, N is the `window size`
   - need to id packets in the window - incrementally
   - buffer the packets at src and client side; Sender needs to buffer packets that were `transmitted but not acked` and recv. may buffer packets for difference in rate of receive and consume. (I/O to disk)
+- > One way is for the receiver to send an ACK for the most recently received in-order packet. The sender would then send all packets from the most recently received in-order packet, even if some of them had been sent before. The receiver can simply discard any out-of-order received packets. This is called `Go-back-N`. In the figure below, packet 7 is lost in the network so the receiver will discard any subsequent packets. The sender will send all the packets starting from 7 again.
+- `selective ACKing` -
+  - > The sender retransmits only those packets that it suspects were received in error. Then, the receiver would acknowledge a correctly received packet even if it is not in order. The out-of-order packets are buffered until any missing packets have been received, at which point the batch of the packets can be delivered to the application layer.
+- `Fast retransmit` - Duplicate ACKs as a means to detect packet loss.
+  - > A duplicate ACK is an additional acknowledgment of a segment for which the sender has already received acknowledgment earlier. When the sender receives 3 duplicate ACKs for a packet, it considers the packet to be lost and will retransmit it instead of waiting for the timeout. This is known as fast retransmit. For example, in the figure below, once the sender receives 3 duplicate ACKs, it will retransmit packet 7 without waiting for a timeout.
+
+---
+
+### Transmission Control
+
+- mechanisms provided in the trans. layer to `control the transmission rate`
+- Where should the transmission control fn reside int he n/w stack? UDP does this.
+- Trans. Control is a fundamental fn. for most apps. hence impl. in transport layer is easy
+
+### Flow control
+
+> Flow control: Controlling the Transmission Rate to Protect the Receiver buffer
+
+- protect reveiver budder from overflowing
+
+> TCP uses a buffer at the receiver end to buffer packets that have not been transmitted to the application. The receiver might be involved with multiple processes and does not read the data instantly. This can cause the accumulation of a massive amount of data and overflow the receive buffer.
+
+- TCP offeres rate control also known as `Flow control`
+- Sender - maintains a receive window `rwnd`: how much the recv. can handle
+- Recv. allocates `RcvBuffer`
+
+We will illustrate its working using an example. Consider two hosts, A and B, communicating with each other over a TCP connection. Host A wants to send a file to Host B. Host B allocates a receive buffer of size RcvBuffer to this connection. The receiving host maintains two variables:
+
+LastByteRead: the number of the last bytes in the data stream read from the buffer by the application process in B `(target)`
+
+LastByteRcvd: the number of the last bytes in the data stream that has arrived from the network and has been placed in the receive buffer at B `Target`
+
+Thus, to not overflow the buffer, TCP needs to make sure that
+
+`LastByteRcvd - LastByteRead <= RcvBuffer`
+
+The extra space that the receive buffer has is specified using a parameter termed as receive window.
+
+`rwnd = RcvBuffer - [LastByteRcvd - LastByteRead]`
+
+LBRead (2) LBRecv (10) => it has read 2. 8 pending
+RcvBuffer = 10; so in this case, LBRv - LBRd = 10-2 = 8; 8 fits in the buffer..
+
+Now, the extra space.. that is 10 - [ 8 - 2 ]=> 10 -6 => can accomodate 4 more.. to fill the buffer..
+OK
+
+- Spare room is `Receive Window` which the dest. tells to source
+- Recevie buffer = Spare room + TCP buffer
+
+- The sender also keeps track of two variables, `LastByteSent and LastByteAcked.`
+  UnACKed Data Sent = LastByteSent - LastByteAcked
+
+To not overflow the receiver’s buffer, the sender must ensure that the maximum number of unacknowledged bytes it sends is no more than the rwnd. Thus we need
+
+LastByteSent – LastByteAcked <= rwnd
+
+> Caveat: However, there is one scenario where this scheme has a problem. Consider a scenario where the receiver had informed the sender that rwnd = 0, and thus the sender stops sending data. Also, assume that B has nothing to send to A. Now, as the application processes the data at the receiver, the receiver buffer is cleared. Still, the sender may never know that new buffer space is available and will be blocked from sending data even when the receiver buffer is empty.
+
+> TCP resolves this problem by making the sender continue sending segments of size 1 byte even after rwnd = 0. When the receiver acknowledges these segments, it will specify the rwnd value, and the sender will know as soon as the receiver has some room in the buffer.
+
+### Congession Control
+
+- Congestion control: Controlling the transmission rate to protect the network from congestion
+
+The second and significant reason for transmission control is to avoid congestion in the network.
+
+Let us look at an example to understand this. Consider a set of senders and receivers sharing a single link with capacity
+. Assume other links have a capacity greater than
+. How fast should each sender transmit data? We do not want the combined transmission rate to be higher than the link's capacity as it can cause issues in the network such as long queues, packet drops, etc. Thus, we want a mechanism to control the transmission rate at the sender to avoid congestion in the network. This is known as congestion control.
+
+It is important to note that networks are quite dynamic, with users joining and leaving the network, initiating data transmission, and terminating existing flows. Thus the mechanisms for congestion control need to be dynamic enough to adapt to these changing network conditions.
+
+#### Goals of n/w congresion control:
+
+Let us consider some of the desirable properties of a good congestion control algorithm:
+
+Efficiency. We should get high throughput, or utilization of the network should be high.
+
+Fairness. Each user should have their fair share of the network bandwidth. The notion of fairness is dependent on the network policy. For this context, we will assume that every flow under the same bottleneck link should get equal bandwidth.
+
+Low delay. In theory, it is possible to design protocols with consistently high throughput assuming infinite buffer. Essentially, we could keep sending the packets to the network, and they will get stored in the buffer and eventually get delivered. However, it will lead to long queues in the network leading to delays. Thus, applications sensitive to network delays such as video conferencing will suffer. Therefore, we want the network delays to be minor.
+
+Fast convergence. The idea here is that a flow should converge to its fair allocation fast. Fast convergence is crucial since a typical network’s workload is composed of many short flows and few long flows. If the convergence to fair share is not fast enough, the network will still be unfair for these short flows.
+
+- Flavors of congession control - 2x:
+
+  - E2E - No n/w assistance; hosts infer congestion from n/w behavior and tune transmission rate
+  - N/w assisted -> n/w layer provides feedback to the sender abt congestion in the n/w
+
+- TCP uses the `end to end` approach
+- Congrestion control is a primitive provided in the `TRANSPORT` layer; but routers operate in the `N/W` layer; Therefore this features resides in the end-node w/ no support from the n/w
+
+### How TCP infers n/w congestion from n/w behavior
+
+> Packet delay and Packet loss
+
+There are mainly two signals of congestion.
+
+First is the packet delay. As the network becomes congested, the queues in the router buffers build-up, leading to increased packet delays. Thus, an increase in the round trip time, which can be estimated based on ACKs, can indicate congestion in the network. However, it turns out that packet delays in a network tend to be variable, making delay-based congestion inference quite tricky.
+
+Another signal for congestion is packet loss. As the network gets congested, routers start dropping packets. Note that packets can also be lost due to other reasons such as routing errors, hardware failure, time-to-live (TTL) expiry, error in the links, or flow control problems, although it is rare.
+
+The earliest implementation of TCP used packet loss as a signal for congestion. This is mainly because TCP already detected and handled packet losses to provide reliability.
+
+### TCP Sender limit the sending rate
+
+TCP congestion control was introduced so that each source can do the following:
+
+- First, determine the network's available capacity.
+- Then, choose how many packets to send without adding to the network's congestion level.
+
+ACKs is used as the probing mechanism. if the recv. received a packet sent earlier, then more are sent
+
+`Congestion window` similar to the receive window used for flow control = Max no. of packets a sending host can hold in transit (`Sent but not yet acked`)
+
+`Probe-and-adapt approach`; Start with something, increase to achieve available thruput, then adjust/decrease based on congestion
+
+`LastByteSent – LastByteAcked <= min{cwnd, rwnd}`
+
+### AIMD
+
+Additive Increase and Multiplicative Decrease
+
+Incrementally add +1 to `cwnd` congestion window
+and reduce the `cwnd` /2 once a congestion is detected.
+
+- Saw tooth pattern over time
+
+> TCP does not wait for ACKs of all the packets from the previous RTT. Instead, it increases the congestion window size as soon as each ACK arrives. In bytes
+
+> The value of cwnd cannot be reduced further than a value of 1 packet.
+
+- `Max. Segment Size MSS`
+
+TCP Reno:
+
+- Triple ACKs (`mild congestion`) and timeout (`Severe`): loss events as a signal for congestion
+
+### Slow Start
+
+> In contrast, when we have a new connection that starts from a cold start, the sending host can take much longer to increase the congestion window by using AIMD. So for a new connection, we need a mechanism that can rapidly increase the congestion window from a cold start.
+
+> TCP Reno has a slow start phase where the congestion window is increased exponentially instead of linearly, as in the case of AIMD. Once the congestion window becomes more than a threshold, often called the slow start threshold, it starts using AIMD.
+
+> we note that there is one more scenario where slow start kicks in: when a connection dies while waiting for a timeout to occur.
+
+> The source will have a fair idea about the congestion window from the last time it had a packet loss. It will now use this information as the “target” value to avoid packet loss in the future. This target value is stored in a temporary variable, CongestionThreshold.
