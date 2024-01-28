@@ -344,3 +344,5 @@ N apps using `ONE` TCP connection sharing a link of rate R; new app having paral
 > Growth window is a fn. of tow consecutive congestion events. First congestion event, TCP undergoes a fast recovery; so all connections/flows will have the same reduced window size.. vs their individual RTT
 
 > TCP throughput is very sensitive to loss
+
+> TCP CUBIC as one such example for high bandwidth-delay product networks.
