@@ -315,7 +315,12 @@ and reduce the `cwnd` /2 once a congestion is detected.
 
 TCP Reno:
 
-- Triple ACKs (`mild congestion`) and timeout (`Severe`): loss events as a signal for congestion
+- Triple ACKs (`mild congestion`)
+
+  > The first is the triple duplicate ACKs, which is considered mild congestion. In this case, the congestion window is reduced to half the original.
+
+- Timeout (`Severe`): GOES BACK TO INITIAL loss events as a signal for congestion
+  > The second kind of congestion detection is timeout, i.e., when no ACK is received within a specified amount of time. It is considered a more severe form of congestion, and the congestion window is reset to the initial window size.
 
 ### Slow Start
 
