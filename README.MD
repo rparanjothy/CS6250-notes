@@ -335,3 +335,6 @@ TCP Reno:
 - Other alternatives
   - AIAD, MIAD - not aggressive reduction..
   - MIMD is too aggressive.
+
+`RTT` - Round trip time may affect the congestion window > unfair
+N apps using `ONE` TCP connection sharing a link of rate R;
