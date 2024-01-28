@@ -352,3 +352,5 @@ N apps using `ONE` TCP connection sharing a link of rate R; new app having paral
 QUIZ:
 
 > No error checking,error correction, or acknowledgment is done by UDP. UDP is only concerned with speed. So when, the data sent over the Internet is affected by collisions, and errors will be present.
+
+> TCP Cubic - increase the Congestion window ultimately
