@@ -367,3 +367,37 @@ QUIZ:
 - Intradomain Routing
 - What it takes for 2 hosts to exchange data.
   > In this lecture, we will learn about the protocols that enable data to travel over a "good" path from the source to the destination within a single administrative domain. First, we'll learn about two types of intradomain routing algorithms: the link-state and distance-vector algorithms. Next, we'll look at example protocols such as OSPF (Open Shortest Path First) and RIP (Routing Information Protocol). We will also look at challenges that intradomain routing protocols face, such as convergence delay. Finally, we will look at how routing protocols are used for purposes beyond determining a "good" path. For example, we can use routing for traffic engineering purposes to steer traffic through the network, avoiding congested links.
+
+### Important Readings
+
+Experience in Black-box OSPF Measurements
+http://conferences.sigcomm.org/imc/2001/imw2001-papers/82.pdfLinks to an external site.
+
+Book References
+If you have access to the Kurose-Ross book and the Peterson book, you can find the list of chapters discussed in this lecture. As mentioned in the course schedule, purchasing the books is not required.
+
+Kurose-Ross (6e)
+4.5.1:The Link-State (LS) Routing Algorithm
+4.5.2: The Distance- Vector (DV) Routing Algorithm
+4.6.1: Intra-AS Routing in the Internet: RIP
+4.6.2: Intra-AS Routing in the Internet: OSPF
+Kurose-Ross (7e)
+5.2.1The Link-State (LS) Routing Algorithm
+5.2.2: The Distance- Vector (DV) Routing Algorithm
+5.3: Intra-AS Routing in the Internet: OSPF
+Kurose-Ross (8e)
+5.2.1: The Link-State (LS) Routing Algorithm
+5.2.2: The Distance- Vector (DV) Routing Algorithm
+5.3: Intra-AS Routing in the Internet: OSPF
+Optional Readings
+Hot Potatoes Heat Up BGP Routing
+https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdfLinks to an external site.
+
+Traffic Engineering With Traditional IP Routing Protocols
+https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/fortz02.pdfLinks to an external site.
+
+Dynamics of Hot-Potato Routing in IP Networks
+https://www.cs.princeton.edu/~jrex/papers/sigmetrics04.pdfLinks to an external site.
+
+OSPF Monitoring: Architecture, Design and Deployment Experience
+https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/shaikh04.pdfLinks to an external site.
