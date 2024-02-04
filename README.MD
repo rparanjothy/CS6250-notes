@@ -427,4 +427,6 @@ Feb 4 2024
 
 - Iterative (loop until no updates)
 - Async (Nodes does not need to be synchronized)
-- distributed (direct nodes send information to each other)
+- distributed (direct nodes send information to each other, then resend their results back after their compute; so calculations are not happening in a centralized manner.)
+
+> The DV algorithm is based on the Bellman Ford Algorithm. Each node maintains its own distance vector, with the costs to reach every other node in the network. Then, from time to time, each node sends its own distance vector to its neighbor nodes. The neighbor nodes in turn, receive that distance vector and they use it to update their own distance vectors. In other words, the neighboring nodes exchange their distance vectors to update their own view of the network.
