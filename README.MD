@@ -423,4 +423,8 @@ O(n2)
 
 Feb 4 2024
 
-### Distance VEctor Routing
+### Distance Vector Routing
+
+- Iterative (loop until no updates)
+- Async (Nodes does not need to be synchronized)
+- distributed (direct nodes send information to each other)
