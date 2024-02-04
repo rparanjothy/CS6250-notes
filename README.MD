@@ -416,3 +416,5 @@ The two major classes of algorithms that we have are `link-state and distance-ve
 - Distance vector
 
 ### Link State routing
+
+O(n2)
