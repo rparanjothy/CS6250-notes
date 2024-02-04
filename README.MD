@@ -418,3 +418,9 @@ The two major classes of algorithms that we have are `link-state and distance-ve
 ### Link State routing
 
 O(n2)
+
+---
+
+Feb 4 2024
+
+### Distance VEctor Routing
