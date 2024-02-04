@@ -432,3 +432,5 @@ Feb 4 2024
 > The DV algorithm is based on the Bellman Ford Algorithm. Each node maintains its own distance vector, with the costs to reach every other node in the network. Then, from time to time, each node sends its own distance vector to its neighbor nodes. The neighbor nodes in turn, receive that distance vector and they use it to update their own distance vectors. In other words, the neighboring nodes exchange their distance vectors to update their own view of the network.
 
 > How is the vector update is happening? Each node x updates its own distance vector using the Bellman Ford equation: Dx(y) = minv{c(x,v) + Dv(y)} for each destination node y in the network. A node x, computes the least cost to reach destination node y, by considering the options that it has to reach y through each of its neighbor v. So node x considers the cost to reach neighbor v, and then it adds the least cost from that neighbor v to the final destination y. It calculates that quantity over all neighbors v and it takes the minimum
+
+_Kurose-Ross Edition 6, Section 4.5.2_
