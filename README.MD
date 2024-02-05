@@ -470,3 +470,5 @@ This technique will solve the problem with 2 nodes, **however poisoned reverse w
 - `HOP COUNT` as a metric
 - Routing updates are exchanged between neighbors periodically vs Distance vectors in DV protocol
 - _RIP advertisements_
+- Routing tables Dest. subnet, next router, hops
+- `AS` Autonomous System
