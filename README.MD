@@ -418,6 +418,9 @@ The two major classes of algorithms that we have are `link-state and distance-ve
 
 O(n2)
 
+- In link-state algorithms, the link costs and the network topology are known to all nodes
+- We have the graph below and we consider our source node to be u. Our goal is to compute the least-cost paths from u to all nodes v in the network
+
 ---
 
 Feb 4 2024
