@@ -503,3 +503,4 @@ The refresh rate for LSAs: OSPF typically has a refresh rate for LSAs, which has
 
 - networks exit (egress points)
 - hot potato routing is a technique/practice of choosing a path `within the network`, by choosing the `closest egress point` based on intradomain path cost (Interior Gateway Protocol/IGP cost).
+- Hot potato routing also effectively reduces the network’s resource consumption by getting the traffic out as soon as possible.
