@@ -468,3 +468,5 @@ This technique will solve the problem with 2 nodes, **however poisoned reverse w
 
 - Routing Information Protocol (RIP) is based on the Distance Vector protocol
 - `HOP COUNT` as a metric
+- Routing updates are exchanged between neighbors periodically vs Distance vectors in DV protocol
+- _RIP advertisements_
