@@ -420,6 +420,7 @@ O(n2)
 
 - In link-state algorithms, the link costs and the network topology are known to all nodes
 - We have the graph below and we consider our source node to be u. Our goal is to compute the least-cost paths from u to all nodes v in the network
+- We start with the initialization step, where we set all the currently known least-cost paths from u to it’s directly attached neighbors v, x and w. For the rest of the nodes in the network we set the cost to infinity, because they are not immediate neighbors to source node u. We also initialize the set N' to include only the source node u. The first row in our table represents the initialization step.
 
 ---
 
