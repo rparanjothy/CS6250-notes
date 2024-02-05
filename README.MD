@@ -362,9 +362,8 @@ QUIZ:
 
 ---
 
-### Lesson 3
+### Lesson 3 Intradomain Routing
 
-- Intradomain Routing
 - What it takes for 2 hosts to exchange data.
   > In this lecture, we will learn about the protocols that enable data to travel over a "good" path from the source to the destination within a single administrative domain. First, we'll learn about two types of intradomain routing algorithms: the link-state and distance-vector algorithms. Next, we'll look at example protocols such as OSPF (Open Shortest Path First) and RIP (Routing Information Protocol). We will also look at challenges that intradomain routing protocols face, such as convergence delay. Finally, we will look at how routing protocols are used for purposes beyond determining a "good" path. For example, we can use routing for traffic engineering purposes to steer traffic through the network, avoiding congested links.
 
