@@ -442,3 +442,5 @@ _Kurose-Ross Edition 6, Section 4.5.2_
 ### Link Cost Changes and Failures in DV - Count to Infinity Problem
 
 > In contrast to the previous scenario, this link cost change took a long time to propagate among the nodes of the network. This is known as the `count-to-infinity` problem.
+
+- It might not be instantaneous all the time, there are cases when the cost goes up from X-Y, it might be bouncing between Y and Z and takes time to break the loop until the weight is significantly high for a propagation to happen.
