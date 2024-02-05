@@ -468,6 +468,7 @@ This technique will solve the problem with 2 nodes, **however poisoned reverse w
 
 - Routing Information Protocol (RIP) is based on the Distance Vector protocol
 - `HOP COUNT` as a metric
+- Intradomain routing algo
 - Routing updates are exchanged between neighbors periodically vs Distance vectors in DV protocol
 - _RIP advertisements_
 - Routing tables Dest. subnet, next router, hops
@@ -497,3 +498,8 @@ Link State Advertisements: Every router within a domain that operates on OSPF us
 The refresh rate for LSAs: OSPF typically has a refresh rate for LSAs, which has a default period of 30 minutes. If a link comes alive before this refresh period is reached, the routers connected to that link ensure LSA flooding. Since the flooding process can happen multiple times, every router receives multiple copies of refreshes or changes - and stores the first received LSA change as new and the subsequent ones as duplicates.
 
 `Forwarding Information Base (FIB)`
+
+### Hot Potato
+
+- networks exit (egress points)
+- hot potato routing is a technique/practice of choosing a path `within the network`, by choosing the `closest egress point` based on intradomain path cost (Interior Gateway Protocol/IGP cost).
