@@ -463,3 +463,5 @@ When y receives this update from z, y will update Dy(x)=51=c(y,z)+Dz(x).
 Since z is now on least cost path of y to reach x, y poisons the reverse path from z to x. Y tells z that Dy(x)=inf, even though y knows that Dy(x)=51.
 
 This technique will solve the problem with 2 nodes, **however poisoned reverse will not solve a general count to infinity problem involving 3 or more nodes that are not directly connected.**
+
+### Distance Vector Routing Protocol Example: RIP
