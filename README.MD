@@ -440,3 +440,5 @@ _Kurose-Ross Edition 6, Section 4.5.2_
 - This is repeated until every node has no updates to make and waits for next changes. `The nodes enter a waiting mode, until there is a change in the link costs. `
 
 ### Link Cost Changes and Failures in DV - Count to Infinity Problem
+
+> In contrast to the previous scenario, this link cost change took a long time to propagate among the nodes of the network. This is known as the `count-to-infinity` problem.
