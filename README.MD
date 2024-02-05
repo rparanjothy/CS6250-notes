@@ -465,3 +465,6 @@ Since z is now on least cost path of y to reach x, y poisons the reverse path fr
 This technique will solve the problem with 2 nodes, **however poisoned reverse will not solve a general count to infinity problem involving 3 or more nodes that are not directly connected.**
 
 ### Distance Vector Routing Protocol Example: RIP
+
+- Routing Information Protocol (RIP) is based on the Distance Vector protocol
+- `HOP COUNT` as a metric
