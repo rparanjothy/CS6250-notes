@@ -434,3 +434,9 @@ Feb 4 2024
 > How is the vector update is happening? Each node x updates its own distance vector using the Bellman Ford equation: Dx(y) = minv{c(x,v) + Dv(y)} for each destination node y in the network. A node x, computes the least cost to reach destination node y, by considering the options that it has to reach y through each of its neighbor v. So node x considers the cost to reach neighbor v, and then it adds the least cost from that neighbor v to the final destination y. It calculates that quantity over all neighbors v and it takes the minimum
 
 _Kurose-Ross Edition 6, Section 4.5.2_
+
+- Each node maintains a cross-tab of distances, for distances that it cant mesasure, it will initialize with `INFINITY` in the first iteration.
+- As nodes communicate, this cross-tab is updated.
+- This is repeated until every node has no updates to make and waits for next changes. `The nodes enter a waiting mode, until there is a change in the link costs. `
+
+### Link Cost Changes and Failures in DV - Count to Infinity Problem
