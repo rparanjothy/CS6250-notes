@@ -447,3 +447,19 @@ _Kurose-Ross Edition 6, Section 4.5.2_
 
 `Bad news travels slow: increase in weights/cost`
 `Good news travels fast: decrease in weights/cost`
+
+### Poison Reverse
+
+- solution to the `count-to-infinity` problem
+
+A solution to the previous problem is the following idea, called poison reverse: since z reaches x through y, z will advertise to y that the distance to x is infinity (Dz(x)=infinity). However z knows that this is not true and Dz(x)=5. z tells this lie to y, as long as it knows that it can reach to x via y. Since y assumes that z has no path to x except via y, it will never send packets to x via z.
+
+So z poisons the path from z to y.
+
+Things change when the cost from x to y changes to 60. y will update its table and send packet to x directly with cost Dy(x)=60. It will inform z about its new cost to x, after this update is received. Then z will immediately shift its route to x to be via the direct (z,x) link at cost 50. Since there is a new path to x, z will inform y that Dz(x)=50.
+
+When y receives this update from z, y will update Dy(x)=51=c(y,z)+Dz(x).
+
+Since z is now on least cost path of y to reach x, y poisons the reverse path from z to x. Y tells z that Dy(x)=inf, even though y knows that Dy(x)=51.
+
+This technique will solve the problem with 2 nodes, **however poisoned reverse will not solve a general count to infinity problem involving 3 or more nodes that are not directly connected.**
