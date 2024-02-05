@@ -475,3 +475,23 @@ This technique will solve the problem with 2 nodes, **however poisoned reverse w
 - Some of the challenges with RIP include updating routes, reducing convergence time, and avoiding loops/count-to-infinity problems.
 
 ### Linkstate Routing Protocol Example: OSPF
+
+- Open Shortest Path First
+
+Open Shortest Path First (OSPF) is a routing protocol that uses a link-state routing algorithm to find the best path between the source and the destination router. OSPF was introduced as an advancement of the RIP Protocol, operating in upper-tier ISPs. It is a link-state protocol that uses flooding of link-state information and a Dijkstra least-cost path algorithm. Advances include authentication of messages exchanged between routers, the option to use multiple same-cost paths, and support for hierarchy within a single routing domain.
+
+As we have seen already, a link-state routing algorithm is a dynamic routing algorithm in which each router shares knowledge of its neighbors with every other router in the network. The network topology built as a result can be viewed as a directed graph with preset weights for each edge assigned by the administrator.
+
+Hierarchy: An OSPF autonomous system can be configured hierarchically into areas. Each area runs its own OSPF link-state routing algorithm, with each router in an area broadcasting its link-state to all other routers in that area. Within each area, one or more area border routers are responsible for routing packets outside the area.
+
+Exactly one OSPF area in the AS1 is configured to be the backbone area. The primary role of the backbone area is to route traffic between the other areas in the AS. The backbone always contains all area border routers in the AS and may contain non-border routers as well.
+
+For packet routing between two different areas, it is required that the packet be sent through an area border router, through the backbone, and then to the area border router within the destination area before finally reaching the destination.
+
+Operation: First, a graph (topological map) of the entire AS is constructed. Then, considering itself as the root node, each router computes the shortest path tree to all subnets by running Dijkstra's algorithm locally. The link costs have been pre-configured by a network administrator. The administrator has a variety of choices while configuring the link costs. For instance, he may choose to set them to be inversely proportional to link capacity or set them all to one. Given a set of link weights, OSPF provides the mechanisms for determining the least-cost path routing.
+
+Whenever there is a change in a link's state, the router broadcasts routing information to all other routers in the AS, not just to its neighboring routers. It also periodically broadcasts a link's state even if its state hasn't changed.
+
+Link State Advertisements: Every router within a domain that operates on OSPF uses Link State Advertisements (LSAs). LSA communicates the router's local routing topology to all other local routers in the same OSPF area. In practice, LSA is used for building a database (called the link state database) containing all the link states. LSAs are typically flooded to every router in the domain. This helps form a consistent network topology view. Any change in the topology requires corresponding changes in LSAs.
+
+The refresh rate for LSAs: OSPF typically has a refresh rate for LSAs, which has a default period of 30 minutes. If a link comes alive before this refresh period is reached, the routers connected to that link ensure LSA flooding. Since the flooding process can happen multiple times, every router receives multiple copies of refreshes or changes - and stores the first received LSA change as new and the subsequent ones as duplicates.
