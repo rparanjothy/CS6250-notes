@@ -472,3 +472,4 @@ This technique will solve the problem with 2 nodes, **however poisoned reverse w
 - _RIP advertisements_
 - Routing tables Dest. subnet, next router, hops
 - `AS` Autonomous System
+- Some of the challenges with RIP include updating routes, reducing convergence time, and avoiding loops/count-to-infinity problems.
