@@ -654,3 +654,22 @@ An AS resorts to importing routes learned from providers only when necessary for
 > Customer > Peer > Provider for IMPORT
 
 ### BGP and Design Goals
+
+- Scalability
+- Express routing policies
+- Allow cooperation among ASes
+- Security
+
+In the previous pages, we talked about importing and exporting routes. In the following topics, we will learn how the default routing protocol, called Border Gateway Protocol, or BGP, is used to implement routing policies.
+
+Let’s first start with the design goals of the BGP protocol.
+
+Scalability: As the size of the Internet grows, the same is true for the number of ASes, the number of prefixes in the routing tables, the network churn, and the BGP traffic exchanged between routers. One of the design goals of BGP is to manage the complications of this growth while achieving convergence in reasonable timescales and providing loop-free paths.
+
+Express routing policies: BGP has defined route attributes that allow ASes to implement policies (which routes to import and export) through route filtering and route ranking. Each ASes routing decisions can be kept confidential, and each AS can implement them independently.
+
+Allow cooperation among ASes: Each AS can still make local decisions (which routes to import and export) while keeping these decisions confidential from other ASes.
+
+Security: Originally, the design goals for BGP did not include security. However, the increase in size and complexity of the Internet demands security measures to be implemented. We need protection and early detection for malicious attacks, misconfiguration, and faults. These vulnerabilities still cause routing disruptions and connectivity issues for individual hosts, networks, and even entire countries. There have been several efforts to enhance BGP security ranging from protocols (e.g., S-BGP), additional infrastructure (e.g., registries to maintain up-to-date information about which ASes own which prefixes ASes), public keys for ASes, etc. Also, there has been extensive research to develop machine learning-based approaches and systems. But these solutions have not been widely deployed or adopted for multiple reasons that include difficulties in transitioning to new protocols and a lack of incentives.
+
+### BGP Protocol basics
