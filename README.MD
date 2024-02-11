@@ -719,3 +719,5 @@ Finally, we note that iBGP is not another IGP-like protocol (e.g., RIP or OSPF).
 - Both iBGP and eBGP take care of dissemination of "External" routes.
 - eBGP is between two border routes that belong to different ASes.
 - iBGP is between routes that belong to same AS
+
+### BGP Decision Process: Selecting Routes at a Router
