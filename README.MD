@@ -580,3 +580,7 @@ Today's Internet is a complex ecosystem built of a network of networks. The basi
 Second, IXPs are interconnection infrastructures that provide the physical infrastructure where multiple networks (e.g., ISPs and CDNs) can interconnect and exchange traffic locally. As of 2019, there are approximately 500 IXPs around the world.
 
 Third, CDNs are networks that content providers create with the goal of having greater control of how the content is delivered to the end-users while reducing connectivity costs. Examples of CDNs are Google and Netflix. These networks have multiple data centers, and each one of them may be housing hundreds of servers that are distributed across the world.
+
+**Competition and Cooperation Among Networks:**
+
+This ecosystem we described forms a hierarchical structure since smaller networks (e.g., access ISPs) connect to larger networks (e.g., Tier-2 ISPs). In other words, an access ISP receives Internet connectivity, becoming the customer of a larger ISP. In this case, the larger ISP becomes the provider of the smaller ISP. This leads to competition at every level of the hierarchy. For example, Tier-1 ISPs compete with each other, and the same is true for regional ISPs that compete with each other. But, at the same time, competing ISPs need to cooperate in providing global connectivity to their respective customer networks. As a result, ISPs deploy multiple interconnection strategies depending on the number of customers in their network and the geographical location of these networks.
