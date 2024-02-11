@@ -517,4 +517,12 @@ The refresh rate for LSAs: OSPF typically has a refresh rate for LSAs, which has
 AS - Autonomous Systems
 
 - how does data travel between networks?
+
   > We know that the Internet is an ecosystem that consists of thousands of independently operated networks. Each network operates in its own interest, and they have independent economic and traffic engineering objectives. And yet they must interconnect to provide global connectivity. In this lesson, we learn about the BGP protocol that provides the glue for this connectivity. We will also learn about the different interconnections types based on business relationships between networks. Finally, we will learn about increasingly popular infrastructures called Internet Exchange Points, which primarily provide interconnection services so that the participant networks can directly exchange traffic.
+
+- Internet is an ecosystem with independently operated networks
+- Networks have individual economic and traffic engineering goals
+- Interconnection is essential for global connectivity
+- BGP protocol facilitates connectivity in the Internet
+- Different interconnection types based on business relationships
+- Internet Exchange Points (IXPs) are popular infrastructures for direct traffic exchange between participant networks
