@@ -584,3 +584,7 @@ Third, CDNs are networks that content providers create with the goal of having g
 **Competition and Cooperation Among Networks:**
 
 This ecosystem we described forms a hierarchical structure since smaller networks (e.g., access ISPs) connect to larger networks (e.g., Tier-2 ISPs). In other words, an access ISP receives Internet connectivity, becoming the customer of a larger ISP. In this case, the larger ISP becomes the provider of the smaller ISP. This leads to competition at every level of the hierarchy. For example, Tier-1 ISPs compete with each other, and the same is true for regional ISPs that compete with each other. But, at the same time, competing ISPs need to cooperate in providing global connectivity to their respective customer networks. As a result, ISPs deploy multiple interconnection strategies depending on the number of customers in their network and the geographical location of these networks.
+
+More interconnection options in the internet ecosystem:
+
+- Point of presence (PoP), multi-homing and peering
