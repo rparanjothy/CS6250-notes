@@ -714,4 +714,8 @@ The eBGP speaking routers learn routes to external prefixes and disseminate them
 
 The dissemination of routes within the AS is done by establishing `a full mesh of iBGP sessions between the internal routers`. Each eBGP speaking router has an iBGP session with every other BGP router in the AS to send updates about the routes it learns (over eBGP).
 
-Finally, we note that iBGP is not another IGP-like protocol (e.g., RIP or OSPF). IGP-like protocols are used to establish paths between the internal routers of an AS based on specific costs within the AS. In contrast, iBGP is only used to disseminate external routes within the AS.
+Finally, we note that iBGP is not another IGP-like protocol (e.g., RIP or OSPF). IGP-like protocols are used to `establish paths between the internal routers of an AS based on specific costs within the AS`. In contrast, iBGP is only used to disseminate external routes within the AS.
+
+- Both iBGP and eBGP take care of dissemination of "External" routes.
+- eBGP is between two border routes that belong to different ASes.
+- iBGP is between routes that belong to same AS
