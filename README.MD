@@ -575,3 +575,8 @@ Today's Internet is a complex ecosystem built of a network of networks. The basi
 - Tier 3 - Access ISPs - Connect to Tier 2 ISPs
 - Tier 2 - Regional USPs - Connect to Tier 1 ISPs
 - Tier 1 - Large Global scale ISPs - `Backbone n/w` over which the smaller n/w can connect (ATT, Sprint)
+
+**IXPs**
+Second, IXPs are interconnection infrastructures that provide the physical infrastructure where multiple networks (e.g., ISPs and CDNs) can interconnect and exchange traffic locally. As of 2019, there are approximately 500 IXPs around the world.
+
+Third, CDNs are networks that content providers create with the goal of having greater control of how the content is delivered to the end-users while reducing connectivity costs. Examples of CDNs are Google and Netflix. These networks have multiple data centers, and each one of them may be housing hundreds of servers that are distributed across the world.
