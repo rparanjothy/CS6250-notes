@@ -652,3 +652,5 @@ An AS uses routes learned from peers since these are usually "free" (under the p
 An AS resorts to importing routes learned from providers only when necessary for connectivity since these will add to costs.
 
 > Customer > Peer > Provider for IMPORT
+
+### BGP and Design Goals
