@@ -565,3 +565,7 @@ Detecting BGP Configuration Faults with Static Analysis
 https://www.usenix.org/legacy/events/nsdi05/tech/feamster/feamster.pdfLinks to an external site.
 
 ### Autonomous Systems and Internet Interconnection
+
+The Internet as a an Ecosystem:
+
+Today's Internet is a complex ecosystem built of a network of networks. The basis of this ecosystem includes `Internet Service Providers (ISPs)`, `Internet Exchange Points (IXPs)`, and `Content Delivery Networks (CDNs)`
