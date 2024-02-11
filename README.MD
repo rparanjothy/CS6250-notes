@@ -829,13 +829,16 @@ Generally, two ASes exchange traffic through the switching fabric utilize a two-
 
 It `collects and shares routing information` from its peers or participants of the IXP that connect to the RS.
 It executes its `own BGP decision process and re-advertises` the resulting information (e.g., best route selection) to all RS's peer routers.
-The figure below shows a multi-lateral BGP peering session, an RS that facilitates and manages how multiple ASes can "talk" on the control plane simultaneously.
+
+The figure below shows a `multi-lateral BGP` peering session, an RS that facilitates and manages how multiple ASes can "talk" on the control plane simultaneously.
 
 How does a route server (RS) maintain multi-lateral peering sessions?
 
-Let's look at a modern route server architecture in the figure below to understand how it works. A typical routing daemon maintains a Routing Information Base (RIB), which contains all BGP paths that it receives from its peers - the Master RIB. In addition, the route server also maintains AS-specific RIBs to keep track of the individual BGP sessions they maintain with each participant AS.
+Let's look at a modern route server architecture in the figure below to understand how it works. A typical routing daemon maintains a `Routing Information Base (RIB)`, which contains all BGP paths that it receives from its peers - the Master RIB. In addition, the route server also maintains AS-specific RIBs to keep track of the individual BGP sessions they maintain with each participant AS.
 
-Route servers maintain two types of route filters. Import filters are applied to ensure that each member AS only advertises routes that it should advertise. And export filters are typically triggered by the IXP members themselves to restrict the set of other IXP member ASes that receive their routes. Let's look at an example where AS X and AS Z exchange routes through a multi-lateral peering session that the route server holds. The steps are as follows:
+Route servers maintain two types of route filters.
+
+`Import filters `are applied to ensure that each member AS only advertises routes that it should advertise. And `export filters` are typically triggered by the IXP members themselves to restrict the set of other IXP member ASes that receive their routes. Let's look at an example where AS X and AS Z exchange routes through a multi-lateral peering session that the route server holds. The steps are as follows:
 
 In the first step, AS X advertises a prefix p1 to the RS, which is added to the route server's RIB specific to AS X.
 The route server uses the peer-specific import filter to check whether AS X is allowed to advertise p1. If it passes the filter, the prefix p1 is added to the Master RIB.
