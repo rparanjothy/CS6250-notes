@@ -511,3 +511,10 @@ The refresh rate for LSAs: OSPF typically has a refresh rate for LSAs, which has
 - Hot potato routing also effectively reduces the network’s resource consumption by getting the traffic out as soon as possible.
 
 ---
+
+### Lesson 4 - AS Relationship and interdomain routing
+
+AS - Autonomous Systems
+
+- how does data travel between networks?
+  > We know that the Internet is an ecosystem that consists of thousands of independently operated networks. Each network operates in its own interest, and they have independent economic and traffic engineering objectives. And yet they must interconnect to provide global connectivity. In this lesson, we learn about the BGP protocol that provides the glue for this connectivity. We will also learn about the different interconnections types based on business relationships between networks. Finally, we will learn about increasingly popular infrastructures called Internet Exchange Points, which primarily provide interconnection services so that the participant networks can directly exchange traffic.
