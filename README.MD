@@ -688,11 +688,14 @@ In the following diagram, we can see three different ASes along with iBGP (e.g.,
 
 BGP messages: After BGP peers establish a session, they can exchange BGP messages to provide reachability information and enforce routing policies. We have two types of BGP messages:
 
-The UPDATE messages contain information about the routes that have changed since the previous update. There are two kinds of updates:
-Announcements are messages that advertise new routes and updates to existing routes. They include several standardized attributes.
-Withdrawals messages inform that receive that a previously announced route is no longer available. The removal could be due to some failure or a change in the routing policy. 2. The KEEPALIVE messages are exchanged between peers to keep a current session going.
+1. The `UPDATE` messages contain information about the routes that have changed since the previous update. There are two kinds of updates:
 
-BGP Prefix Reachability: In the BGP protocol, destinations are represented by IP prefixes. Each prefix represents a subnet or a collection of subnets that an AS can reach. Gateway routers running eBGP advertise the IP prefixes they can reach according to the AS's specific export policy to routers in neighboring ASes. Then, using separate iBGP sessions, the gateway routers disseminate these routes for external destinations to other internal routers according to the AS's import policy. Internal routers run iBGP to propagate the external routes to other internal iBGP speaking routers.
+   - `Announcements` are messages that advertise new routes and updates to existing routes. They include several standardized attributes.
+   - `Withdrawals` messages inform that receive that a previously announced route is no longer available. The removal could be due to some failure or a change in the routing policy.
+
+2. The `KEEPALIVE` messages are exchanged between peers to keep a current session going.
+
+**BGP Prefix Reachability:** In the BGP protocol, destinations are represented by IP prefixes. Each prefix represents a subnet or a collection of subnets that an AS can reach. Gateway routers running eBGP advertise the IP prefixes they can reach according to the AS's specific export policy to routers in neighboring ASes. Then, using separate iBGP sessions, the gateway routers disseminate these routes for external destinations to other internal routers according to the AS's import policy. Internal routers run iBGP to propagate the external routes to other internal iBGP speaking routers.
 
 Path Attributes and BGP Routes: In addition to the reachable IP prefix field, advertised BGP routes consist of several BGP attributes. Two notable attributes are AS-PATH and NEXT-HOP.
 
