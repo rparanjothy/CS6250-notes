@@ -1,0 +1,187 @@
+Score for this quiz: 22 out of 23
+Submitted Feb 11 at 2:59pm
+This attempt took 28 minutes.
+
+Question 1
+1 / 1 pts
+The Internet topology has been evolving to an increasingly prominent hierarchical structure.  
+ True
+False
+
+Question 2
+1 / 1 pts
+An Autonomous System operates across multiple administrative domains.  
+ True
+False
+
+Question 3
+1 / 1 pts
+For two ASes to form a peering agreement, they need to find common ground regarding the internal policies and traffic engineering approaches that each AS implements.  
+ True
+False
+
+Question 4
+1 / 1 pts
+A Content Distribution Network (CDN) or an ISP can operate over multiple Autonomous Systems.
+True
+False
+
+Question 5
+1 / 1 pts
+Consider the figure below that denotes ASes and their relationships.
+
+Note: C1, C2, C3 are customers of ISP-X. ISP-P is a provider of ISP-X.
+
+ISPs-2.jpg
+
+ISP-X has the incentive to advertise routes for C3 to Y.
+
+True
+False
+
+Question 6
+1 / 1 pts
+Consider the figure below that denotes networks and their relationships.
+
+Note: C1, C2, C3 are customers of ISP-X. ISP-P is a provider of ISP-X.
+
+ISPs.jpg
+
+ISP-X has the incentive to advertise the routes for P’s customers to Y and Z.
+
+True
+False
+
+Question 7
+1 / 1 pts
+Consider the figure below:
+
+Note: C1, C2, C3 are customers of ISP-X. ISP-P is a provider of ISP-X.
+
+ISPs-1.jpg
+
+Assume that AS-X learns multiple routes for the same external destination W. These multiple routes are advertised from C3, from Y and from P. How would AS-X rank these routes before deciding which one to import?
+
+1. route learned from C3, 2) route learned from Y, 3) route learned from P.
+1. route learned from Y, 2) route learned from C3, 3) route learned from P.
+1. route learned from P, 2) route learned from Y, 3) route learned from C3.
+
+Question 8
+1 / 1 pts
+Consider the topology below and the types of BGP sessions the routers form.
+
+Screen Shot 2021-01-27 at 7.23.07 PM.png Select the true statements.
+
+R-A1 <-> R-A3 : iBGP
+R-B1 <-> R-A3 : eBGP
+R-B3 <-> R-D2 : iBGP
+R-D3 <-> R-D2 : eBGP
+
+Question 9
+1 / 1 pts
+Assume that router R-D2 learns about a route to a destination in AS-A. How would router R-D2 disseminate this route to R-D3 and R-D1?
+
+Screen Shot 2021-01-27 at 7.23.07 PM.png
+
+Using iBGP.
+Using eBGP.
+Using IGP.
+
+Question 10
+1 / 1 pts
+Assume that router R-D2 learns about a route to an internal destination in AS-D. How would router R-D2 disseminate this route to R-D3 and R-D1?
+
+Screen Shot 2021-01-27 at 7.23.07 PM.png
+
+Using iBGP.
+Using eBGP.
+Using IGP.
+
+Question 11
+1 / 1 pts
+Assume that router R-B1 learns about a route to AS-C. How would router R-B1 disseminate this route to R-A3?
+
+Screen Shot 2021-01-27 at 7.23.07 PM.png
+
+Using iBGP.
+Using eBGP.
+Using IGP.
+
+Question 12
+1 / 1 pts
+Since the BGP path selection process is fixed, an AS has no control over which routes are selected.  
+ True
+False
+
+Question 13
+1 / 1 pts
+Assume that AS-B learns about an external destination both from AS-C and from AS-A. AS-B can show preference to use the route heard from AS-C by assigning higher LocalPref value to that route.
+
+Screen Shot 2021-01-27 at 7.23.07 PM.png
+
+True
+False
+
+Question 14
+1 / 1 pts
+Assume that AS-B advertises the routes to its internal destination to AS-A using the routers R-B1 and R-B4. AS-B can communicate to AS-A that it prefers R-B1 as an entry point to the network, by assigning lower MED values to these routes.
+
+Screen Shot 2021-01-27 at 7.23.07 PM.png
+
+True
+False
+
+Question 15
+1 / 1 pts
+An AS can use LocalPref to control which routers are used as exit points (for the outgoing traffic), and it can use the MED attribute to control which routers are used as entry points (for the incoming traffic).  
+ True
+False
+
+Question 16
+1 / 1 pts
+One of the services provided by IXPs is additional security protections such as mitigation of DDoS (Distributed Denial of Service) attacks.
+True
+False
+
+Question 17
+1 / 1 pts
+There are no costs involved for an AS to participate at an IXP.  
+ True
+False
+
+IncorrectQuestion 18
+0 / 1 pts
+Since local traffic stays local at IXPs, the IXP infrastructures deal with limited volumes of traffic.  
+ True
+False
+
+Question 19
+1 / 1 pts
+When a large provider or Content Delivery Network joins an IXP, this can act as an incentive for other networks to join as well.  
+ True
+False
+
+Question 20
+1 / 1 pts
+At an IXP, the members have the choice to peer privately or publicly.
+True
+False
+
+Question 21
+1 / 1 pts
+IXPs leading incentive to establish route servers was to charge the participants for using it.  
+ True
+False
+
+Question 22
+1 / 1 pts
+An IXP route server does not need to run the BGP protocol to facilitate the establishment of multi-lateral peering sessions.  
+ True
+False
+
+Question 23
+1 / 1 pts
+For multi-lateral BGP peering sessions at an IXP, the participants have the choice to advertise routes, either directly to other participants, or to the route server.  
+ True
+False
+Quiz Score: 22 out of 23
