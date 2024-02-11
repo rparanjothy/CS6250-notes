@@ -677,3 +677,24 @@ Security: Originally, the design goals for BGP did not include security. However
 > A BGP session between a pair of routers in two different ASes is called an external BGP (eBGP) session, and a BGP session between routers that belong to the same AS is called an internal BGP (iBGP) session.
 
 > autonomous system number (ASN).
+
+In this topic, we will review some of the basic ideas of the BGP protocol.
+
+A pair of routers, known as BGP peers, exchange routing information over a semi-permanent TCP port connection called a BGP session. In order to begin a BGP session, a router will send an OPEN message to another router. Then the sending and receiving routers will send each other announcements from their routing tables. The time it takes to exchange routes varies from a few seconds to several minutes, depending on the number of routes exchanged.
+
+A BGP session between a pair of routers in two different ASes is called an external BGP (eBGP) session, and a BGP session between routers that belong to the same AS is called an internal BGP (iBGP) session.
+
+In the following diagram, we can see three different ASes along with iBGP (e.g., between 3c and 3a) and eBGP (e.g., between 3a and 1c ) sessions between their border routers.
+
+BGP messages: After BGP peers establish a session, they can exchange BGP messages to provide reachability information and enforce routing policies. We have two types of BGP messages:
+
+The UPDATE messages contain information about the routes that have changed since the previous update. There are two kinds of updates:
+Announcements are messages that advertise new routes and updates to existing routes. They include several standardized attributes.
+Withdrawals messages inform that receive that a previously announced route is no longer available. The removal could be due to some failure or a change in the routing policy. 2. The KEEPALIVE messages are exchanged between peers to keep a current session going.
+
+BGP Prefix Reachability: In the BGP protocol, destinations are represented by IP prefixes. Each prefix represents a subnet or a collection of subnets that an AS can reach. Gateway routers running eBGP advertise the IP prefixes they can reach according to the AS's specific export policy to routers in neighboring ASes. Then, using separate iBGP sessions, the gateway routers disseminate these routes for external destinations to other internal routers according to the AS's import policy. Internal routers run iBGP to propagate the external routes to other internal iBGP speaking routers.
+
+Path Attributes and BGP Routes: In addition to the reachable IP prefix field, advertised BGP routes consist of several BGP attributes. Two notable attributes are AS-PATH and NEXT-HOP.
+
+ASPATH: Each AS is identified by its autonomous system number (ASN). As an announcement passes through various ASes, their identifiers are included in the ASPATH attribute. This attribute prevents loops and is used to choose between multiple routes to the same destination, the route with the shortest path.
+NEXT HOP: This attribute refers to the next-hop router's IP address (interface) along the path towards the destination. Internal routers use the field to store the IP address of the border router. Internal BGP routers will forward all traffic bound for external destinations through the border router. Suppose there is more than one such router on the network, and each advertises a path to the same external destination. In that case, NEXT HOP allows the internal router to store in the forwarding table the best path according to the AS routing policy.
