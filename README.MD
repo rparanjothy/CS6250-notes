@@ -593,8 +593,10 @@ The Internet topology: hierarchical versus flat: As we said, this ecosystem we j
 
 **Autonomous Systems:** `Each of the networks we discussed above (e.g., ISPs and CDNs) may operate as an Autonomous System (AS).`
 
-> An AS is a group of routers (including the links among them) that operate under the same administrative authority.
+> An AS is a group of routers (including the links among them) that operate under the same administrative authority. An ISP, for example, may operate as a single AS, or it may operate through multiple ASes. Each AS implements its own policies, makes its own traffic engineering decisions and interconnection strategies, and determines how the traffic leaves and enters its network.
 
-An ISP, for example, may operate as a single AS, or it may operate through multiple ASes. Each AS implements its own policies, makes its own traffic engineering decisions and interconnection strategies, and determines how the traffic leaves and enters its network.
+Protocols for routing traffic between and within ASes: The border routers of the ASes use the `Border Gateway Protocol (BGP) to exchange routing information with one another`.
 
-Protocols for routing traffic between and within ASes: The border routers of the ASes use the Border Gateway Protocol (BGP) to exchange routing information with one another. In contrast, the Interior Gateway Protocols (IGPs) operate within an AS, and they are focused on "optimizing a path metric" within that network. Example IGPs include Open Shortest Paths First (OSPF), Intermediate System - Intermediate System (IS-IS), Routing Information Protocol (RIP), and E-IGRP. In this lesson, we will focus on BGP.
+In contrast, the `Interior Gateway Protocols (IGPs)` operate `within` an AS, and they are focused on "optimizing a path metric" within that network.
+
+Example IGPs include Open Shortest Paths First (OSPF), Intermediate System - Intermediate System (IS-IS), Routing Information Protocol (RIP), and E-IGRP. In this lesson, we will focus on BGP.
