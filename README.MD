@@ -605,7 +605,8 @@ Example IGPs include Open Shortest Paths First (OSPF), Intermediate System - Int
 
 In this topic, we will talk about the prevalent forms of business relationships between ASes:
 
-Provider-Customer relationship (or transit): This relationship is based on a financial settlement that determines how much the customer will pay the provider. The provider forwards the customer's traffic to destinations found in the provider's routing table (including the opposite direction of the traffic).
+> Provider-Customer relationship (or transit): This relationship is based on a financial settlement that determines how much the customer will pay the provider. The provider forwards the customer's traffic to destinations found in the provider's routing table (including the opposite direction of the traffic).
+
 Peering relationship: In a peering relationship, two ASes share access to a subset of each other's routing tables. The routes shared between two peers are often restricted to the respective customers of each one. The agreement holds as long as the traffic exchanged between the two peers is not highly asymmetric. Peering relationships are formed between Tier-1 ISPs but also between smaller ISPs. In the case of Tier-1 ISPs, the two peers need to be of similar size and handle proportional amounts of traffic. Otherwise, the larger ISP would lack the incentive to enter a peering relationship with a smaller size ISP. When two small ISPs peer, they both save the money they would otherwise pay to their providers by directly forwarding traffic between themselves instead of through their providers. This arrangement is primarily beneficial when a significant amount of traffic is destined for each other (or each other's customers).
 AS Business relationships diagram
 
