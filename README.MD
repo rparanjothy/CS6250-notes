@@ -572,6 +572,6 @@ Today's Internet is a complex ecosystem built of a network of networks. The basi
 
 3 Types of **ISP**:
 
-- Tier 3 - Access ISPs
-- Tier 2 - Regional USPs
-- Tier 1 - Large Global scale ISPs
+- Tier 3 - Access ISPs - Connect to Tier 2 ISPs
+- Tier 2 - Regional USPs - Connect to Tier 1 ISPs
+- Tier 1 - Large Global scale ISPs - `Backbone n/w` over which the smaller n/w can connect (ATT, Sprint)
