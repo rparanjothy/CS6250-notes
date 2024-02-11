@@ -570,6 +570,8 @@ The Internet as a an Ecosystem:
 
 Today's Internet is a complex ecosystem built of a network of networks. The basis of this ecosystem includes `Internet Service Providers (ISPs)`, `Internet Exchange Points (IXPs)`, and `Content Delivery Networks (CDNs)`
 
+**Border Gateway Protocol - BGP**
+
 3 Types of **ISP**:
 
 - Tier 3 - Access ISPs - Connect to Tier 2 ISPs
