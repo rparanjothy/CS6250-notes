@@ -569,3 +569,9 @@ https://www.usenix.org/legacy/events/nsdi05/tech/feamster/feamster.pdfLinks to a
 The Internet as a an Ecosystem:
 
 Today's Internet is a complex ecosystem built of a network of networks. The basis of this ecosystem includes `Internet Service Providers (ISPs)`, `Internet Exchange Points (IXPs)`, and `Content Delivery Networks (CDNs)`
+
+3 Types of **ISP**:
+
+- Tier 3 - Access ISPs
+- Tier 2 - Regional USPs
+- Tier 1 - Large Global scale ISPs
