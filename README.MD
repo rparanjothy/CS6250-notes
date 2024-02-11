@@ -834,7 +834,7 @@ The figure below shows a `multi-lateral BGP` peering session, an RS that facilit
 
 How does a route server (RS) maintain multi-lateral peering sessions?
 
-Let's look at a modern route server architecture in the figure below to understand how it works. A typical routing daemon maintains a `Routing Information Base (RIB)`, which contains all BGP paths that it receives from its peers - the Master RIB. In addition, the route server also maintains AS-specific RIBs to keep track of the individual BGP sessions they maintain with each participant AS.
+Let's look at a modern route server architecture in the figure below to understand how it works. A typical routing daemon maintains a `Routing Information Base (RIB)`, which contains **all BGP paths that it receives from its peers - the Master RIB.** In addition, the route server also maintains AS-specific RIBs to keep track of the individual BGP sessions they maintain with each participant AS.
 
 Route servers maintain two types of route filters.
 
