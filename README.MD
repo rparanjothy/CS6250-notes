@@ -752,3 +752,13 @@ The MED (Multi-Exit Discriminator) value is used by ASes connected by multiple l
 We have seen in the previous topics that an AS does not have an economic incentive to export routes that it learns from providers or peers to other providers or peers. An AS can reflect this by tagging routes with a MED value to "staple" the type of business relationship. Also, an AS filters routes with specific MED values before exporting them to other ASes. Finally, we note that influencing the route exports will also affect how the traffic enters an AS (the routers that are entry points for the traffic that enters the AS).
 
 So, where/how are the attributes controlled? The attributes are set either (a) locally by the AS (e.g., LocalPref), (b) by the neighboring AS (e.g., MED), (c) or by the protocol (e.g., if a route is learned through eBGP or iBGP).
+
+- ASes operated by different authorities with diverse business goals and network - conditions.
+- BGP Decision Process at a router involves import policies, route selection, forwarding table installation, and export policies.
+- Decision process considers attributes; path length often crucial if no policy in place.
+- LocalPref attribute used to prefer routes from a specific AS, influencing outbound - traffic and exit points.
+- Routes ranked by preference: customers, peers, providers; LocalPref ranges reflect - business relationships.
+- MED (Multi-Exit Discriminator) influences inbound traffic preference for ASes with - multiple links.
+- ASes use MED values to designate preferred links, affecting route choice for inbound - traffic.
+- ASes tag routes with specific MED values to indicate business relationships, affecting route exports.
+- Attributes controlled locally (e.g., LocalPref), by neighboring AS (e.g., MED), or by the protocol (e.g., eBGP/iBGP).
