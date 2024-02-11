@@ -827,11 +827,9 @@ Free value-added services: In the interest of ‘good of the Internet’, a few 
 
 Generally, two ASes exchange traffic through the switching fabric utilize a two-way BGP session, called a bilateral BGP session. However, since many ASes are peering at an IXP, we have another challenge to accommodate a rising number of BGP sessions. As a result, this option does not scale with many participants. To mitigate this, some IXPs operate a route server, which helps to make peering more manageable. In summary, a Route Server (RS) does the following:
 
-It collects and shares routing information from its peers or participants of the IXP that connect to the RS.
-It executes its own BGP decision process and re-advertises the resulting information (e.g., best route selection) to all RS's peer routers.
+It `collects and shares routing information` from its peers or participants of the IXP that connect to the RS.
+It executes its `own BGP decision process and re-advertises` the resulting information (e.g., best route selection) to all RS's peer routers.
 The figure below shows a multi-lateral BGP peering session, an RS that facilitates and manages how multiple ASes can "talk" on the control plane simultaneously.
-
-Multilateral BGP peering session
 
 How does a route server (RS) maintain multi-lateral peering sessions?
 
