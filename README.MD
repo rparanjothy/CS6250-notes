@@ -675,3 +675,5 @@ Security: Originally, the design goals for BGP did not include security. However
 ### BGP Protocol basics
 
 > A BGP session between a pair of routers in two different ASes is called an external BGP (eBGP) session, and a BGP session between routers that belong to the same AS is called an internal BGP (iBGP) session.
+
+> autonomous system number (ASN).
