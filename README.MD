@@ -637,6 +637,8 @@ Let's look at the different types of routes an AS (let's call it X) decides whet
 
 **Routes learned from peers:** These are routes that X receives as advertisements from its peers. As we saw earlier, it does not make sense for X to advertise to provider A the routes it receives from provider B. Because in that case, providers A and B will use X to reach the advertised destinations without X making revenue. The same is true for the routes that X learns from peers.
 
+> Customer > Provider > Peer for EXPORT
+
 ### Importing Routes
 
 Like exporting, ASes are selective about which routes to import. These decisions are primarily based on which neighboring AS advertises them and the type of business relationship established. An AS receives route advertisements from its customers, providers, and peers.
@@ -644,5 +646,9 @@ Like exporting, ASes are selective about which routes to import. These decisions
 When an AS receives multiple route advertisements towards the same destination from multiple ASes, it needs to rank the routes before selecting which one to import. In order of preference, the imported routes are the customer routes, then the peer routes, and finally, the provider routes. The reasoning behind this ranking is as follows:
 
 An AS wants to ensure that routes toward its customers do not traverse other ASes, unnecessarily generating costs.
+
 An AS uses routes learned from peers since these are usually "free" (under the peering agreement).
+
 An AS resorts to importing routes learned from providers only when necessary for connectivity since these will add to costs.
+
+> Customer > Peer > Provider for IMPORT
