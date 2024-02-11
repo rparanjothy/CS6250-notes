@@ -701,3 +701,17 @@ BGP messages: After BGP peers establish a session, they can exchange BGP message
 
 - ASPATH: Each AS is identified by its autonomous system number (ASN). As an announcement passes through various ASes, their identifiers are included in the ASPATH attribute. `This attribute prevents loops and is used to choose between multiple routes to the same destination, the route with the shortest path.`
 - NEXT HOP: This attribute refers to the next-hop router's IP address (interface) along the path towards the destination. `Internal routers use the field to store the IP address of the border router`. Internal BGP routers will forward all traffic bound for external destinations through the border router. Suppose there is more than one such router on the network, and each advertises a path to the same external destination. In that case, NEXT HOP allows the internal router to store in the forwarding table the best path according to the AS routing policy.
+
+### iBGP and eBGP
+
+> IGP-like protocols are used to establish paths between the internal routers of an AS based on specific costs within the AS. In contrast, iBGP is only used to disseminate external routes within the AS.
+
+In the previous topic, we saw that we have two flavors of BGP: eBGP (for sessions are between border routers of neighboring ASes) and iBGP (for sessions between internal routers of the same AS).
+
+Both protocols are used to disseminate routes for external destinations.
+
+The eBGP speaking routers learn routes to external prefixes and disseminate them to all routers within the AS. This dissemination is happening with iBGP sessions. For example, as the figure below shows, the border routers of AS1, AS2, and AS3 establish eBGP sessions to learn external routes. Inside AS2, these routes are disseminated using iBGP sessions.
+
+The dissemination of routes within the AS is done by establishing a full mesh of iBGP sessions between the internal routers. Each eBGP speaking router has an iBGP session with every other BGP router in the AS to send updates about the routes it learns (over eBGP).
+
+Finally, we note that iBGP is not another IGP-like protocol (e.g., RIP or OSPF). IGP-like protocols are used to establish paths between the internal routers of an AS based on specific costs within the AS. In contrast, iBGP is only used to disseminate external routes within the AS.
