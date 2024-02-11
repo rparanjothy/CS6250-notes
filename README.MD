@@ -735,19 +735,22 @@ Let's take a look at the router's decision process. Suppose that a router receiv
 
 A router compares a pair of routes by going through the list of attributes, as shown in the figure below. For each attribute, it selects the route with the attribute value that will help apply the policy. If for a specific attribute, the values are the same, then it goes to the next attribute.
 
-BGP Decision Process: Selecting Routes at a Router-2
-
 Influencing The Route Decision Using the LocalPref
-Let's focus on two attributes, LocalPref and MED (Multi-Exit Discriminator), and let's see how we can use them to influence the decision process. The LocalPref attribute is used to prefer routes learned through a specific AS over other ASes. For example, suppose AS B learns of a route to the same destination x via A and C. If B prefers to route its traffic through A, due to peering or business, it can assign a higher LocalPref value to routes it learns from A. And therefore, by using LocalPref, AS B can control where the traffic exits the AS. In other words, it will influence which routers will be selected as exit points for the traffic that leaves the AS (outbound traffic).
 
-BGP Decision Process: Selecting Routes at a Router-3
+```txt
+LocalPref - outbound traffic
+MED - Inbound traffic
+```
+
+Let's focus on two attributes, `LocalPref and MED (Multi-Exit Discriminator)`, and let's see how we can use them to influence the decision process.
+
+The LocalPref attribute is used to prefer routes learned through a specific AS over other ASes. For example, suppose AS B learns of a route to the same destination x via A and C. If B prefers to route its traffic through A, due to peering or business, it can assign a higher LocalPref value to routes it learns from A. And therefore, by using LocalPref, AS B can control where the traffic exits the AS. In other words, it will influence which `routers will be selected as exit points` for the traffic that leaves the AS (`outbound` traffic).
 
 As we saw earlier in this lesson, an AS ranks the routes it learns by preferring first the routes learned from its customers, then the routes learned from its peers, and finally, the routes learned from its providers. An operator can assign a non-overlapping range of values to the LocalPref attribute according to the type of relationship. So assigning different LocalPref ranges will influence which routes are imported. The following image shows a scheme that can be used to reflect the business relationships:
 
-BGP Decision Process: Selecting Routes at a Router-4
-
 Influencing the Route Decision Using the MED Attribute
-The MED (Multi-Exit Discriminator) value is used by ASes connected by multiple links to designate which links are preferred for inbound traffic. For example, the network operator of AS B will assign different MED values to its routes advertised to AS A through R1 and different MED values to its routes advertised through R2. As a result of different MED values for the same routes, AS A will be influenced to choose R1 to forward traffic to AS B, if R1 has a lower MED value, and if all other attributes are equal.
+
+The MED (Multi-Exit Discriminator) value is used by ASes connected by multiple links to designate which links are preferred for `inbound` traffic. For example, the network operator of AS B will assign different MED values to its routes advertised to AS A through R1 and different MED values to its routes advertised through R2. As a result of different MED values for the same routes, AS A will be influenced to choose R1 to forward traffic to AS B, if R1 has a lower MED value, and if all other attributes are equal.
 
 We have seen in the previous topics that an AS does not have an economic incentive to export routes that it learns from providers or peers to other providers or peers. An AS can reflect this by tagging routes with a MED value to "staple" the type of business relationship. Also, an AS filters routes with specific MED values before exporting them to other ASes. Finally, we note that influencing the route exports will also affect how the traffic enters an AS (the routers that are entry points for the traffic that enters the AS).
 
@@ -762,3 +765,7 @@ So, where/how are the attributes controlled? The attributes are set either (a) l
 - ASes use MED values to designate preferred links, affecting route choice for inbound traffic.
 - ASes tag routes with specific MED values to indicate business relationships, affecting route exports.
 - Attributes controlled locally (e.g., LocalPref), by neighboring AS (e.g., MED), or by the protocol (e.g., eBGP/iBGP).
+
+```
+
+```
