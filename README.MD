@@ -738,8 +738,8 @@ A router compares a pair of routes by going through the list of attributes, as s
 Influencing The Route Decision Using the LocalPref
 
 ```txt
-LocalPref - outbound traffic
-MED - Inbound traffic
+LocalPref - outbound traffic (high preferred)
+MED - Inbound traffic (Low preferred)
 ```
 
 Let's focus on two attributes, `LocalPref and MED (Multi-Exit Discriminator)`, and let's see how we can use them to influence the decision process.
@@ -766,6 +766,4 @@ So, where/how are the attributes controlled? The attributes are set either (a) l
 - ASes tag routes with specific MED values to indicate business relationships, affecting route exports.
 - Attributes controlled locally (e.g., LocalPref), by neighboring AS (e.g., MED), or by the protocol (e.g., eBGP/iBGP).
 
-```
-
-```
+### Challenges with BGP: Scalability and Misconfigurations
