@@ -753,12 +753,12 @@ We have seen in the previous topics that an AS does not have an economic incenti
 
 So, where/how are the attributes controlled? The attributes are set either (a) locally by the AS (e.g., LocalPref), (b) by the neighboring AS (e.g., MED), (c) or by the protocol (e.g., if a route is learned through eBGP or iBGP).
 
-- ASes operated by different authorities with diverse business goals and network - conditions.
+- ASes operated by different authorities with diverse business goals and network conditions.
 - BGP Decision Process at a router involves import policies, route selection, forwarding table installation, and export policies.
 - Decision process considers attributes; path length often crucial if no policy in place.
-- LocalPref attribute used to prefer routes from a specific AS, influencing outbound - traffic and exit points.
-- Routes ranked by preference: customers, peers, providers; LocalPref ranges reflect - business relationships.
-- MED (Multi-Exit Discriminator) influences inbound traffic preference for ASes with - multiple links.
-- ASes use MED values to designate preferred links, affecting route choice for inbound - traffic.
+- LocalPref attribute used to prefer routes from a specific AS, influencing outbound traffic and exit points.
+- Routes ranked by preference: customers, peers, providers; LocalPref ranges reflect business relationships.
+- MED (Multi-Exit Discriminator) influences inbound traffic preference for ASes with multiple links.
+- ASes use MED values to designate preferred links, affecting route choice for inbound traffic.
 - ASes tag routes with specific MED values to indicate business relationships, affecting route exports.
 - Attributes controlled locally (e.g., LocalPref), by neighboring AS (e.g., MED), or by the protocol (e.g., eBGP/iBGP).
